@@ -1,98 +1,192 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-      <title>Responsive navbar - Bedimcode</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <nav class="nav container">
-            <a href="#" class="nav__logo">Logo</a>
+    <title>NeverDie Esports</title>
+   
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">NEVER-DIE ESPORTS</a>
 
             <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">
-                        <i class="ri-arrow-right-up-line"></i>
-                        <span>Home</span>
-                     </a>
-                  </li>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <i class="ri-arrow-right-up-line"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
 
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">
-                        <i class="ri-arrow-right-up-line"></i>
-                        <span>About Us</span>
-                     </a>
-                  </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <i class="ri-arrow-right-up-line"></i>
+                            <span>About Us</span>
+                        </a>
+                    </li>
 
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">
-                        <i class="ri-arrow-right-up-line"></i>
-                        <span>Projects</span>
-                     </a>
-                  </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <i class="ri-arrow-right-up-line"></i>
+                            <span>Tournaments</span>
+                        </a>
+                    </li>
 
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">
-                        <i class="ri-arrow-right-up-line"></i>
-                        <span>Studio</span>
-                     </a>
-                  </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <i class="ri-arrow-right-up-line"></i>
+                            <span>Points table</span>
+                        </a>
+                    </li>
+                </ul>
 
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">
-                        <i class="ri-arrow-right-up-line"></i>
-                        <span>Contact</span>
-                     </a>
-                  </li>
-               </ul>
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-large-line"></i>
+                </div>
 
-               <!-- Close button -->
-               <div class="nav__close" id="nav-close">
-                  <i class="ri-close-large-line"></i>
-               </div>
-
-               <div class="nav__social">
-                  <a href="https://www.instagram.com/" target="_blank" class="nav__social-link">
-                     <i class="ri-instagram-line"></i>
-                  </a>
-
-                  <a href="https://github.com/" target="_blank" class="nav__social-link">
-                     <i class="ri-github-line"></i>
-                  </a>
-
-                  <a href="https://dribbble.com/" target="_blank" class="nav__social-link">
-                     <i class="ri-dribbble-line"></i>
-                  </a>
-
-                  <a href="https://www.linkedin.com/" target="_blank" class="nav__social-link">
-                     <i class="ri-linkedin-box-line"></i>
-                  </a>
-               </div>
+                <div class="nav__social">
+                    <!-- Add onclick event to open modal -->
+                  
+                    <a href="#" class="nav__social-link" onclick="openModal()">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="#" class="nav__social-link" onclick="openModal()">
+                        <i class="ri-youtube-line"></i>
+                    </a>
+                    <a href="#" class="nav__social-link" onclick="openModal()">
+                        <i class="ri-whatsapp-line"></i>
+                    </a>
+                   
+                </div>
+               
+            </div>
+            <div class="signup">
+                <a href="#" class="nav__login-link" onclick="openModal()">
+                    <i class="ri-user-line"></i>
+                </a>
             </div>
 
             <!-- Toggle button -->
             <div class="nav__toggle" id="nav-toggle">
-               <i class="ri-menu-line"></i>
+                  <i class="ri-menu-line"></i>
             </div>
-         </nav>
-      </header>
+        </nav>
+    </header>
 
-      <!--==================== MAIN ====================-->
-      <main>
-         <!-- Insert page sections -->
-      </main>
-      
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
+   <!-- Modal for login/signup -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="toggle-options">
+                <a href="javascript:void(0);" class="login-option active" onclick="toggleForm('login')">Login</a>
+                <a href="javascript:void(0);" class="signup-option" onclick="toggleForm('signup')">Signup</a>
+            </div>
+            <!-- Login form -->
+            <div id="loginForm">
+                <h2>Login</h2>
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label for="teamName">Team Name:</label>
+                        <input type="text" id="teamName" name="teamName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword" name="loginPassword" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+
+            <!-- Signup form -->
+            <div id="signupForm" style="display: none;">
+                <h2>Signup</h2>
+                <form action="/signup" method="post">
+                    <div class="form-group">
+                        <label for="teamNameSignup">Team Name:</label>
+                        <input type="text" id="teamNameSignup" name="teamNameSignup" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="player1ID">Player 1 ID:</label>
+                        <input type="text" id="player1ID" name="player1ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="player2ID">Player 2 ID:</label>
+                        <input type="text" id="player2ID" name="player2ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="player3ID">Player 3 ID:</label>
+                        <input type="text" id="player3ID" name="player3ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="captainID">Captain ID:</label>
+                        <input type="text" id="captainID" name="captainID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password:</label>
+                        <input type="password" id="signupPassword" name="signupPassword" required>
+                    </div>
+                    <button type="submit">Signup</button>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- JavaScript to toggle between login and signup forms -->
+    <script>
+        function toggleForm(formType) {
+            var loginForm = document.getElementById("loginForm");
+            var signupForm = document.getElementById("signupForm");
+            var loginOption = document.querySelector(".login-option");
+            var signupOption = document.querySelector(".signup-option");
+
+            if (formType === 'login') {
+                loginForm.style.display = "block";
+                signupForm.style.display = "none";
+                loginOption.classList.add('active');
+                signupOption.classList.remove('active');
+            } else {
+                loginForm.style.display = "none";
+                signupForm.style.display = "block";
+                loginOption.classList.remove('active');
+                signupOption.classList.add('active');
+            }
+        }
+    </script>
+
+    <!--==================== MAIN ====================-->
+    <main>
+        <!-- Insert page sections -->
+    </main>
+    
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Function to open the modal
+        function openModal() {
+            modal.style.display = "block";
+        }
+
+        // Close the modal when clicked outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
 </html>
