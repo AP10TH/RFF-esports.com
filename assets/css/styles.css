@@ -83,7 +83,8 @@ a {
 
 .nav__logo {
   color: var(--white-color);
-  font-weight: var(--font-medium);
+  font-weight: bold;
+  font-size: 100;
 }
 
 .nav__close, 
@@ -131,12 +132,24 @@ a {
   .nav__item:nth-child(5) {
     transition-delay: .5s;
   }
+
+  /* Place login icon left to menu button */
+  .nav__toggle {
+    order: 1;
+  }
+
+  .nav__login-link {
+    order: 0;
+    margin-right: 1rem; /* Adjust margin as needed */
+  }
 }
 
 .nav__list, 
 .nav__social {
   display: flex;
 }
+
+
 
 .nav__list {
   flex-direction: column;
@@ -212,7 +225,17 @@ a {
   transition: transform .4s;
 }
 
+.nav__login-link {
+  color: cyan;
+  font-size: 1.5rem;
+  transition: transform .4s;
+}
+
 .nav__social-link:hover {
+  transform: translateY(-.25rem);
+}
+
+.nav__login-link:hover {
   transform: translateY(-.25rem);
 }
 
@@ -261,4 +284,99 @@ a {
     align-items: center;
     column-gap: 3.5rem;
   }
+
+  .nav__social, .nav__login-link {
+    display: flex;
+  }
+}
+
+/* Style for the login/signup modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #000;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: calc(100% - 10px);
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button[type="submit"] {
+    background-color: #FF4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #FF6347;
+}
+
+.toggle-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.toggle-options {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.login-option.active .login-text,
+.signup-option.active .signup-text {
+  color: red; /* Change color as needed */
+}
+
+.indicator {
+  width: 10px; /* Diameter of the circle */
+  height: 10px; /* Diameter of the circle */
+  border-radius: 50%;
+  background-color: transparent; /* Initial color */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  bottom: -5px; /* Adjust position as needed */
 }
